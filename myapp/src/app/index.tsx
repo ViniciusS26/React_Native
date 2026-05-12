@@ -1,31 +1,33 @@
-import { View, Text, StyleSheet, Image, ScrollView} from 'react-native'
+import { View, Text, StyleSheet, Image, ScrollView, KeyboardAvoidingView, Platform} from 'react-native'
 import  { Input } from '@/components/input'
 import { Buttons } from '@/components/buttons'
 import { Link } from 'expo-router'
 
 export default function IndexPage(){
     return(
-         <ScrollView style={{ flex: 1,}} contentContainerStyle={styles.scrollContent}>
-            <View style={styles.container}>
-               
-                    <Image style={styles.ilustrations} source={require("@/assets/logo.png")} />
-                    <Text style={styles.title}>Entrar</Text>
-                    <Text style={styles.description}>
-                        Acesse sua conta com e-mail e senha
-                    </Text>
+        <KeyboardAvoidingView style={{ flex: 1}} behavior={Platform.select({ ios: 'padding', android: 'height' })}>
+            <ScrollView  contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps='handled'>
+                <View style={styles.container}>
+                
+                        <Image style={styles.ilustrations} source={require("@/assets/logo.png")} />
+                        <Text style={styles.title}>Entrar</Text>
+                        <Text style={styles.description}>
+                            Acesse sua conta com e-mail e senha.
+                        </Text>
 
-                    <View style={styles.form}>
-                        <Input placeholder="E-mail" keyboardType='email-address'/>
-                        <Input placeholder="Senha" secureTextEntry/>
-                        <Buttons label="Entrar"/>
-                    </View>
+                        <View style={styles.form}>
+                            <Input placeholder="E-mail" keyboardType='email-address'/>
+                            <Input placeholder="Senha" secureTextEntry/>
+                            <Buttons label="Entrar"/>
+                        </View>
 
-                    <Text style={styles.register}>
-                        Não tem uma conta?{""} <Link href="/signup"><Text style={styles.textTow}>Cadastre-se</Text></Link>
-                    </Text>
-               
-            </View>
-         </ScrollView>
+                        <Text style={styles.register}>
+                            Não tem uma conta?{""} <Link href="/signup"><Text style={styles.textTow}>Cadastre-se</Text></Link>
+                        </Text>
+                
+                </View>
+            </ScrollView>
+        </KeyboardAvoidingView>
     )
 }
 
@@ -39,22 +41,22 @@ const styles = StyleSheet.create({
 
     ilustrations:{
         width: "100%",
-        height: 300,
+        height: 350,
         alignItems: 'center',
         marginTop: 40,
         resizeMode: 'contain',
     },
 
     title:{
-        fontSize: 32,
+        fontSize: 36,
         fontWeight: 900,
         color: '#0043c9f4',
     },
 
     description:{
-        fontSize: 18,
+        fontSize: 16,
         color: '#155882d6',
-        fontWeight: 400,
+        fontWeight: 300,
         marginBottom: 20,
       
     },
