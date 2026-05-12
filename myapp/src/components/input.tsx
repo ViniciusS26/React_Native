@@ -21,7 +21,5 @@ const styleInput = StyleSheet.create({
         fontFamily: 'Roboto',
         fontSize: 16,
         marginBottom: 16,
-     
-    }
-   
+    },
 })
