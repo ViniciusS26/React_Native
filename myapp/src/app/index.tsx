@@ -24,11 +24,10 @@ const styles = StyleSheet.create({
 
     ilustrations:{
         width: "100%",
-        height: 400,
+        height: 250,
         marginBottom: 32,
         alignItems: 'center',
         marginTop: 70,
-  
     },
 
     title:{
@@ -38,9 +37,10 @@ const styles = StyleSheet.create({
     },
 
     description:{
-        fontSize: 20,
+        fontSize: 18,
         color: '#155882d6',
         fontWeight: 400,
+        marginBottom: 32,
       
     }
 });
