@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image, ScrollView} from 'react-native'
 import  { Input } from '@/components/input'
 import { Buttons } from '@/components/buttons'
-
+import { Link } from 'expo-router'
 
 export default function IndexPage(){
     return(
@@ -21,7 +21,7 @@ export default function IndexPage(){
                     </View>
 
                     <Text style={styles.register}>
-                        Não tem uma conta? <Text style={styles.textTow}>Cadastre-se</Text>
+                        Não tem uma conta?{""} <Link href="/signup"><Text style={styles.textTow}>Cadastre-se</Text></Link>
                     </Text>
                
             </View>
@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
         marginTop:20,
         color: '#8d8d8df4',
         fontWeight: 600,
+        textAlign: 'center',
     },
 
     textTow:{
