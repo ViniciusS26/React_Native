@@ -1,25 +1,26 @@
-import { TextInput,StyleSheet, View} from "react-native"
+import { TextInput,StyleSheet, View, TextInputProps} from "react-native"
 
-export function Input(){
+export function Input(props: TextInputProps){
     return(
         <View>
-            <TextInput placeholder="Email" style={styleInput.stlInput}/>
-            <TextInput placeholder="Senha" style={styleInput.stlInput}/>
-
+            <TextInput  style={styleInput.stlInput} {...props}/>
         </View>
     )
 }
 
-Input.displayName ="Input"
+
 
 const styleInput = StyleSheet.create({
     stlInput:{
+        width: "100%",
+        height: 48,
         borderWidth: 1,
         borderColor: '#92b7ff',
-        padding: 20,
-        borderRadius: 20,
+        padding: 15,
+        borderRadius: 10,
         fontFamily: 'Roboto',
         fontSize: 16,
-        marginBottom: 16,
+        margin: 5,
+        
     },
 })
