@@ -17,8 +17,6 @@ export default function Signup(){
 
                         <View style={styles.form}>
                             <Input placeholder="Nome" />
-                            <Input placeholder="Sobrenome" />
-                            <Input placeholder="Telefone" keyboardType='phone-pad'/>
                             <Input placeholder="E-mail" keyboardType='email-address'/>
                             <Input placeholder="Senha" secureTextEntry/>
                             <Input placeholder="Confirmar Senha" secureTextEntry/>
