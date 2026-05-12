@@ -24,7 +24,6 @@ export default function IndexPage(){
                         <Text style={styles.register}>
                             Não tem uma conta?{""} <Link href="/signup"><Text style={styles.textTow}>Cadastre-se</Text></Link>
                         </Text>
-                
                 </View>
             </ScrollView>
         </KeyboardAvoidingView>

@@ -16,10 +16,10 @@ const styleInput = StyleSheet.create({
         height: 48,
         borderWidth: 1,
         borderColor: '#92b7ff',
-        padding: 15,
+        padding: 10,
         borderRadius: 10,
         fontFamily: 'Roboto',
-        fontSize: 16,
+        fontSize: 14,
         margin: 5,
         
     },
