@@ -2,13 +2,13 @@ import { useState} from 'react'
 import { View, Text, StyleSheet, Image, ScrollView, KeyboardAvoidingView, Platform, Alert} from 'react-native'
 import  { Input } from '@/components/input'
 import { Buttons } from '@/components/buttons'
-import { Link } from 'expo-router'
-import NavigationComponent from './navigation'
-import {useNavigation} from '@react-navigation/native';
+import { Link, router} from 'expo-router'
+
 
 export default function IndexPage(){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
     function validateEmail(email: string) {
         const teste = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return teste.test(email);
@@ -17,16 +17,17 @@ export default function IndexPage(){
    
 
     function handleLogin(){
-        const mensageErrorValue = "Por favor, preencha todos os campos."
-        const mensageErrorEmail = "Por favor, insira um e-mail válido."
-        var mensagem = ""
+       
         if(!email || !password){
-          mensagem += Alert.alert("Erro", mensageErrorValue)
+          Alert.alert("Erro", "Preencha todos os campos")
         }
         if(email && !validateEmail(email)){
-           mensagem += Alert.alert("Erro", mensageErrorEmail)
+           Alert.alert("Erro", "Por favor, insira um e-mail válido.")
         }
-        return mensagem
+        if(email && validateEmail(email) && password){
+            Alert.alert("Sucesso", "Login realizado com sucesso!")
+            router.replace('/home')
+        }
     }
     return(
         <KeyboardAvoidingView style={{ flex: 1}} behavior={Platform.select({ ios: 'padding', android: 'height' })}>
@@ -42,7 +43,7 @@ export default function IndexPage(){
                         <View style={styles.form}>
                             <Input placeholder="E-mail" keyboardType='email-address' onChangeText={(text) => setEmail(text)}/>
                             <Input placeholder="Senha" secureTextEntry onChangeText={(pass)=>setPassword(pass)}/>
-                            <Buttons label="Entrar" onPress={handleLogin} />
+                            <Buttons label="Entrar"  onPress={handleLogin} />
                         </View>
 
                         <Text style={styles.register}>
