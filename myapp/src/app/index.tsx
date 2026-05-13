@@ -1,9 +1,25 @@
-import { View, Text, StyleSheet, Image, ScrollView, KeyboardAvoidingView, Platform} from 'react-native'
+import { useState} from 'react'
+import { View, Text, StyleSheet, Image, ScrollView, KeyboardAvoidingView, Platform, Alert} from 'react-native'
 import  { Input } from '@/components/input'
 import { Buttons } from '@/components/buttons'
 import { Link } from 'expo-router'
 
 export default function IndexPage(){
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    function validateEmail(email: string) {
+        const teste = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return teste.test(email);
+    }
+    function handleLogin(){
+        if(!email || !password){
+            return Alert.alert("Erro", "Por favor, preencha todos os campos.")
+        }
+        if(email && !validateEmail(email)){
+            return Alert.alert("Erro", "Por favor, insira um e-mail válido.")
+        }
+        return Alert.alert("Login", "Login realizado com sucesso!")
+    }
     return(
         <KeyboardAvoidingView style={{ flex: 1}} behavior={Platform.select({ ios: 'padding', android: 'height' })}>
             <ScrollView  contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps='handled'>
@@ -16,9 +32,9 @@ export default function IndexPage(){
                         </Text>
 
                         <View style={styles.form}>
-                            <Input placeholder="E-mail" keyboardType='email-address'/>
-                            <Input placeholder="Senha" secureTextEntry/>
-                            <Buttons label="Entrar"/>
+                            <Input placeholder="E-mail" keyboardType='email-address' onChangeText={(text) => setEmail(text)}/>
+                            <Input placeholder="Senha" secureTextEntry onChangeText={(pass)=>setPassword(pass)}/>
+                            <Buttons label="Entrar" onPress={handleLogin}/>
                         </View>
 
                         <Text style={styles.register}>
