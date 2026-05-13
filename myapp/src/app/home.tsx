@@ -6,9 +6,11 @@ import { Link } from 'expo-router'
 
 export default function HomePage(){
     return(
-        <View style={styles.container}>
-            <Text style={styles.title}>Home</Text>
-        </View>
+        <ScrollView contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps='handled'>
+            <View style={styles.container}>
+                <Text style={styles.title}>Home</Text>
+            </View>
+        </ScrollView>
     )
 }
 
@@ -17,6 +19,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        height: '100%',
+        backgroundColor: '#f0f0f0',
     }, 
 
     title:{
