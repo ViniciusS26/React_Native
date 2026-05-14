@@ -1,21 +1,10 @@
-import { useState} from 'react'
+
 import { View, Text, StyleSheet, Image, ScrollView, KeyboardAvoidingView, Platform} from 'react-native'
 import { Buttons } from '@/components/buttons'
-import { Link, router} from 'expo-router'
-import ImageView from "react-native-image-viewing";
-
+import {  router} from 'expo-router'
 
 export default function IndexPage(){
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
-    function validateEmail(email: string) {
-        const teste = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return teste.test(email);
-    }
-
    
-
     function handleLogin(){
         return router.replace('/home')
     }
@@ -44,8 +33,9 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 32,
-        fontFamily:'Monrope',
+        padding: 30,
+        backgroundColor: '#5f33e118',
+        
     },
 
     ilustrations:{
@@ -56,15 +46,17 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     title:{
-        marginTop: 180, 
+        marginTop: 160, 
         fontSize: 30,
         fontWeight: 900,
         textAlign: 'center',
-        color: '#24252C'
+        color: '#24252C',
+        fontFamily:', Sans-Serif',
     },
     description:{
-        marginTop: 20,
+        marginTop: 10,
         fontSize: 18,
+        fontFamily:'Lexend Deca, Sans-Serif',
         color: '#8d8d8df4',
         textAlign: 'center',
         width:'100%',
