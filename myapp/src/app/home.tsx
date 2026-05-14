@@ -2,13 +2,18 @@ import { useState} from 'react'
 import { View, Text, StyleSheet, Image, ScrollView, KeyboardAvoidingView, Platform, Alert} from 'react-native'
 import  { Input } from '@/components/input'
 import { Buttons } from '@/components/buttons'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
+import Header from '@/components/header'
+
 
 export default function HomePage(){
     return(
         <ScrollView contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps='handled'>
+            <Header />
             <View style={styles.container}>
-                <Text style={styles.title}>Home</Text>
+                <Link href="/" style={{ width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                    <Text>Ir para a página inicial</Text>
+                </Link>
             </View>
         </ScrollView>
     )
@@ -24,6 +29,9 @@ const styles = StyleSheet.create({
     }, 
 
     title:{
+ 
+         color: '#24252C',
+        justifyContent: 'center',
         fontSize: 24,
         fontWeight: 'bold',
     }
