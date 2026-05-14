@@ -1,38 +1,63 @@
-import { useState} from 'react'
-import { View, Text, StyleSheet,ListRenderItem, Image, ScrollView, KeyboardAvoidingView, Platform, Alert} from 'react-native'
+import { View, Text, StyleSheet, Image} from 'react-native'
 
 export default function Header(){
     return(
         <View style={styles.container}>
-            <View style={styles.listStyle}>
-                 <Text style={styles.title}>Header</Text>
-                <Text style={styles.title}>Header</Text>
-                <Text style={styles.title}>Header</Text>
-                <Text style={styles.title}>Header</Text>
-            </View>            
+            <Image style={styles.imageStyle} source={require('@/assets/minhafoto.jpg')} />
+            <View style={styles.conatinerHeader}>
+                <View style={styles.listStyle}>
+                    <Text style={styles.title}>Hello!</Text>
+                    <Text style={styles.user}>Vinicius Nunes</Text>
+                </View>
+                <Image style={styles.imageNotification} source={require('@/assets/notification.png')} />
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-    
-        backgroundColor: '#5F33E1',
-        padding: 10,
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
+        borderWidth: 1 ,
+        borderColor: '#0050ef',
+        padding: 10,
+        marginTop: 50,
+        marginLeft: 10,
+        marginRight: 10,
+        borderRadius: 10,
+    },
+    conatinerHeader: {
+        flex: 1,
+        flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+    imageStyle: {
+        borderRadius: 100,
+        width: 50,
+        height: 50,
+    },
+    imageNotification: {
+        width: 24,
+        height: 24,
+  
     },
     listStyle:{
-        display: 'flex', 
-        flexDirection: 'row', 
-        justifyContent: 'space-between'
+        paddingLeft: 15,
+        flexDirection: 'column',
+        alignItems:'flex-start'
     },
     title: {
-        fontSize: 20,
-        fontWeight: '300',
-        color: '#fff',
+        fontSize: 14,
+        fontWeight: '400',
+        color: '#000000',
         textAlign: 'center',
-        
+    },
+    user: {
+        fontSize: 20,
+        fontWeight: '700',
+        color: '#000000',
+        textAlign: 'center',
     }
 })

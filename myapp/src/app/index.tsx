@@ -12,7 +12,7 @@ export default function IndexPage(){
         <KeyboardAvoidingView style={{ flex: 1}} behavior={Platform.select({ ios: 'padding', android: 'height' })}>
             <ScrollView  contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps='handled'>
                 <View style={styles.container}>
-                    <Image style={styles.ilustrations} source={require("@/assets/image.png")} />
+                    <Image style={styles.ilustrations} source={require("@/assets/imageHome.png")} />
                     <Text style={styles.title}>Task Management & To-Do List </Text>
                     <Text style={styles.description}>
                         This productive tool is designed to help you better manage your task project-wise conveniently!
@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     },
 
     ilustrations:{
+        marginTop: 50,
         width: 250,
         height: 300,
         alignItems: 'center',
@@ -46,25 +47,25 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     title:{
-        marginTop: 160, 
+        marginTop: 100, 
         fontSize: 30,
         fontWeight: 900,
         textAlign: 'center',
         color: '#24252C',
-        fontFamily:', Sans-Serif',
+        fontFamily:'Lexend Deca, Sans-Serif',
     },
     description:{
         marginTop: 10,
-        fontSize: 18,
+        fontSize: 16,
         fontFamily:'Lexend Deca, Sans-Serif',
         color: '#8d8d8df4',
         textAlign: 'center',
         width:'100%',
-        fontWeight: 300,
+        fontWeight: 200,
     },
 
     buttonStyle:{
-        marginTop: 50,
+        marginTop: 40,
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
