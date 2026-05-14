@@ -19,8 +19,6 @@ const styles = StyleSheet.create({
     container: {
         display: 'flex',
         flexDirection: 'row',
-        borderWidth: 1 ,
-        borderColor: '#0050ef',
         padding: 10,
         marginTop: 50,
         marginLeft: 10,
