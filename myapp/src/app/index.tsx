@@ -33,8 +33,9 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 32,
-        fontFamily:'Monrope',
+        padding: 30,
+        backgroundColor: '#5f33e118',
+        
     },
 
     ilustrations:{
@@ -45,15 +46,17 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     title:{
-        marginTop: 180, 
+        marginTop: 160, 
         fontSize: 30,
         fontWeight: 900,
         textAlign: 'center',
-        color: '#24252C'
+        color: '#24252C',
+        fontFamily:', Sans-Serif',
     },
     description:{
-        marginTop: 20,
+        marginTop: 10,
         fontSize: 18,
+        fontFamily:'Lexend Deca, Sans-Serif',
         color: '#8d8d8df4',
         textAlign: 'center',
         width:'100%',
