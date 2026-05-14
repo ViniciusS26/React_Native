@@ -1,21 +1,10 @@
-import { useState} from 'react'
+
 import { View, Text, StyleSheet, Image, ScrollView, KeyboardAvoidingView, Platform} from 'react-native'
 import { Buttons } from '@/components/buttons'
-import { Link, router} from 'expo-router'
-import ImageView from "react-native-image-viewing";
-
+import {  router} from 'expo-router'
 
 export default function IndexPage(){
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
-    function validateEmail(email: string) {
-        const teste = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return teste.test(email);
-    }
-
    
-
     function handleLogin(){
         return router.replace('/home')
     }
