@@ -1,8 +1,8 @@
 import { useState} from 'react'
-import { View, Text, StyleSheet, Image, ScrollView, KeyboardAvoidingView, Platform, Alert} from 'react-native'
-import  { Input } from '@/components/input'
+import { View, Text, StyleSheet, Image, ScrollView, KeyboardAvoidingView, Platform} from 'react-native'
 import { Buttons } from '@/components/buttons'
 import { Link, router} from 'expo-router'
+import ImageView from "react-native-image-viewing";
 
 
 export default function IndexPage(){
@@ -17,38 +17,20 @@ export default function IndexPage(){
    
 
     function handleLogin(){
-       
-        if(!email || !password){
-          Alert.alert("Erro", "Preencha todos os campos")
-        }
-        if(email && !validateEmail(email)){
-           Alert.alert("Erro", "Por favor, insira um e-mail válido.")
-        }
-        if(email && validateEmail(email) && password){
-            Alert.alert("Sucesso", "Login realizado com sucesso!")
-            router.replace('/home')
-        }
+        return router.replace('/home')
     }
     return(
         <KeyboardAvoidingView style={{ flex: 1}} behavior={Platform.select({ ios: 'padding', android: 'height' })}>
             <ScrollView  contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps='handled'>
                 <View style={styles.container}>
-                
-                        <Image style={styles.ilustrations} source={require("@/assets/logo.png")} />
-                        <Text style={styles.title}>Entrar</Text>
-                        <Text style={styles.description}>
-                            Acesse sua conta com e-mail e senha.
-                        </Text>
-
-                        <View style={styles.form}>
-                            <Input placeholder="E-mail" keyboardType='email-address' onChangeText={(text) => setEmail(text)}/>
-                            <Input placeholder="Senha" secureTextEntry onChangeText={(pass)=>setPassword(pass)}/>
-                            <Buttons label="Entrar"  onPress={handleLogin} />
-                        </View>
-
-                        <Text style={styles.register}>
-                            Não tem uma conta?{""} <Link href="/signup"><Text style={styles.textTow}>Cadastre-se</Text></Link>
-                        </Text>
+                    <Image style={styles.ilustrations} source={require("@/assets/image.png")} />
+                    <Text style={styles.title}>Task Management & To-Do List </Text>
+                    <Text style={styles.description}>
+                        This productive tool is designed to help you better manage your task project-wise conveniently!
+                    </Text>
+                    <View style={styles.buttonStyle}>
+                        <Buttons label="Let's Start"  onPress={handleLogin}/>
+                     </View>
                 </View>
             </ScrollView>
         </KeyboardAvoidingView>
@@ -56,38 +38,44 @@ export default function IndexPage(){
 }
 
 const styles = StyleSheet.create({
-    scrollContent:{
-        flexGrow: 1,     
-    },
+
+
     container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
         padding: 32,
+        fontFamily:'Monrope',
     },
 
     ilustrations:{
-        width: "100%",
-        height: 350,
+        width: 250,
+        height: 300,
         alignItems: 'center',
-        marginTop: 40,
+        fontFamily:'Lexend Deca, Sans-Serif',
         resizeMode: 'contain',
     },
-
     title:{
-        fontSize: 36,
+        marginTop: 180, 
+        fontSize: 30,
         fontWeight: 900,
-        color: '#0043c9f4',
+        textAlign: 'center',
+        color: '#24252C'
     },
-
     description:{
-        fontSize: 16,
-        color: '#155882d6',
+        marginTop: 20,
+        fontSize: 18,
+        color: '#8d8d8df4',
+        textAlign: 'center',
+        width:'100%',
         fontWeight: 300,
-        marginBottom: 20,
-      
     },
 
-    form:{
-        marginTop: 10,
-        gap:5,
+    buttonStyle:{
+        marginTop: 50,
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
     },
     register:{
         marginTop:20,
@@ -99,5 +87,6 @@ const styles = StyleSheet.create({
     textTow:{
         color: '#0043c9f4',
         fontWeight: 600,
-    }
+    },
+    
 });
