@@ -11,7 +11,7 @@ export function Buttons({ label, ...rest }: ButtonProps){
                 <Text style={style.lbButton}>{label}</Text>
             </View>
             <View style={style.arrowContainer}>
-                <Image  source={require('@/assets/arrow.png')}  />
+                <Image style={style.arrowImage} source={require('@/assets/arrowP.png')}  />
             </View>
             
         </TouchableOpacity>
@@ -24,14 +24,15 @@ const style = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         gap: 10,
-        width: 350,
-        height: 52,
+        width: 380,
+        height: 54,
         backgroundColor: '#5F33E1',
         justifyContent: 'space-between',
         alignItems: 'center',
         textAlign: 'center',
-        borderRadius: 10,
+        borderRadius: 21,
         paddingHorizontal: 20,
+        boxShadow: '0px 20px 20px rgba(0, 0, 0, 0.09)',
    },
    lbButton:{
         color: '#ffffff',
@@ -46,5 +47,9 @@ const style = StyleSheet.create({
         width: '30%',
         alignItems: 'flex-end',
         padding: 10,
+   },
+   arrowImage:{
+        width: 24,
+        height: 24,
    }
 })
