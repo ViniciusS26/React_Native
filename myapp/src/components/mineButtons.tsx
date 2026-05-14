@@ -14,10 +14,9 @@ export function MineButtons({ label, ...rest }: TouchableOpacityProps & { label:
 const style = StyleSheet.create({
     container:{
         backgroundColor: '#EEE9FF',
-      
         borderRadius: 10,
-        width: 110,
-        height: 40,
+        width: 118,
+        height: 45,
         alignItems: 'center',
         justifyContent: 'center',
 
