@@ -4,12 +4,13 @@ import  { Input } from '@/components/input'
 import { Buttons } from '@/components/buttons'
 import { Link, router } from 'expo-router'
 import Header from '@/components/header'
-
+import { StatusTask } from '@/components/statusTask'
 
 export default function HomePage(){
     return(
         <ScrollView contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps='handled'>
             <Header />
+            <StatusTask />
             <View style={styles.container}>
                 <Link href="/" style={{ width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
                     <Text>Ir para a página inicial</Text>
