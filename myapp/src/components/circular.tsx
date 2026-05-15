@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontWeight: 'bold',
-    fontSize: 14,
+    fontWeight: 400,
+    fontSize: 15,
   },
 });
 
